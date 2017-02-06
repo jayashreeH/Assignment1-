@@ -1,0 +1,37 @@
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="nav-side-menu">
+    <div class="brand">list of vehicles</div>
+   <table class="table  table-hover ">
+  <thead>
+    <tr  >
+      <th><span class="glyphicon glyphicon-arrow-up" (click)="nameAscSorting()"></span>
+          <span class="glyphicon glyphicon-arrow-down" (click)="nameDscSorting()"></span>NAME</th>
+
+      <th><span class="glyphicon glyphicon-arrow-up" (click)="yearAscSorting()"></span>
+          <span class="glyphicon glyphicon-arrow-down" (click)="yearDscSorting()"></span>YEAR</th>
+
+      <th><span class="glyphicon glyphicon-arrow-up" (click)="modelAscSorting()"></span>
+          <span class="glyphicon glyphicon-arrow-down" (click)="modelDscSorting()"></span>MODEL</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr *ngFor="let item of vehicles | yearSorting : '-' " >
+      <td>
+       <a href="#1" (click)="showDetails(item)"> {{item.name  | uppercase}} </a>
+        
+        </td>
+      <td>{{item.year }}</td>
+      <td>{{item.model }}</td>
+      
+    
+    </tr>
+  </tbody>
+</table> 
+</div>
+<div *ngIf="vehicleFlag==true" style="float:right;margin-right: 45%">
+    
+    <vehicleDetails [vehicleDataDesc]="item" > </vehicleDetails>
+</div>
+
