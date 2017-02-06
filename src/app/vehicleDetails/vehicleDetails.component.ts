@@ -3,7 +3,6 @@ import {LookUpService} from '../services/lookup.service';
 
 @Component({
   selector: 'vehicleDetails',
-  styleUrls: ['./vehicleDetails.component.css'],
   templateUrl: './vehicleDetails.component.html'
    
 })
